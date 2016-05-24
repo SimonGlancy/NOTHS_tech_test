@@ -4,7 +4,7 @@ describe Item do
   PRODUCT_CODE_ONE = "001"
   ITEM_NAME_ONE = "Travel Card Holder"
   ITEM_PRICE_ONE = 9.25
-  TWENTY_PERCENT_DISCOUNT = 0.2
+  TEN_PERCENT_DISCOUNT = 0.1
 
   let(:item) {described_class.new(PRODUCT_CODE_ONE,ITEM_NAME_ONE,ITEM_PRICE_ONE)}
 
@@ -25,8 +25,8 @@ describe Item do
 
   describe "#discount" do
     it "reduces the price of the item" do
-      item.discount(TWENTY_PERCENT_DISCOUNT)
-      expect(item.price).to eq(ITEM_PRICE_ONE * (1 - TWENTY_PERCENT_DISCOUNT))
+      item.discount(TEN_PERCENT_DISCOUNT)
+      expect(item.price).to eq(8.33)
     end
   end
 
