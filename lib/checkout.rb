@@ -1,16 +1,13 @@
 class Checkout
 
-
-
 attr_reader :basket
 
-BASKET_DISCOUNT = 0.1
-DISCOUNT_THRESHOLD = 60
-MULTIBUY_DISCOUNT = 0.081
-MULTIBUY_ITEM = "xxx"
-
-  def initialize
+  def initialize(promotional_rules)
     @basket = []
+    @basket_discount = promotional_rules.basket_discount
+    @discount_threshold = promotional_rules.discount_threshold
+    @multibuy_discount = promotional_rules.multibuy_discount
+    @multibuy_item = promotional_rules.multibuy_item
   end
 
   def scan(item)
@@ -26,23 +23,25 @@ MULTIBUY_ITEM = "xxx"
   end
 
   def apply_basket_discount
-      @basket.each{|item| reduce_price(BASKET_DISCOUNT, item)} if basket_discount?
+      @basket.each{|item| reduce_price(@basket_discount, item)} if basket_discount?
   end
 
-  def apply_multibuy_discount(offer)
-      find_offers_in_basket(offer).each{|item| reduce_price(MULTIBUY_DISCOUNT, item) }
+  def apply_multibuy_discount
+      find_offers_in_basket.each{|item| reduce_price(@multibuy_discount, item) }
   end
 
-  def multibuy?(offer)
-    @basket.count(offer) > 1
+private
+
+  def multibuy?
+    @basket.count(@multibuy_item) > 1
   end
 
   def basket_discount?
-    total > DISCOUNT_THRESHOLD
+    total > @discount_threshold
   end
 
-  def find_offers_in_basket(offer)
-    @basket.select{|item| item == offer }.uniq
+  def find_offers_in_basket
+    @basket.select{|item| item == @multibuy_item }.uniq
   end
 
 end

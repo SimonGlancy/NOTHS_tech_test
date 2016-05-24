@@ -16,6 +16,4 @@ attr_reader :product_code, :name
     @price.round(2)
   end
 
-
-
 end
