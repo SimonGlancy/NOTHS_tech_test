@@ -1,25 +1,17 @@
 require "promotion"
 require "checkout"
 require "item"
+require "helpers"
 
 
 
 describe Promotion do
 
-  BASKET_DISCOUNT = 0.1
-  DISCOUNT_THRESHOLD = 60
-  MULTIBUY_PRICE = 8.50
-
-
-  let(:promotion) {described_class.new(basket_discount: BASKET_DISCOUNT,
+  subject(:promotion) {described_class.new(basket_discount: BASKET_DISCOUNT,
                                        discount_threshold: DISCOUNT_THRESHOLD,
                                        multibuy_price: MULTIBUY_PRICE,
                                        multibuy_item: multibuy_item)}
-  let(:multibuy_item) {double(:item,
-                      product_code: "001",
-                      name: "Travel Card Holder",
-                      price: 9.25,
-                      discount: "reduce")}
+  doubles
 
   describe "#initialize" do
     it "has a basket discount value" do
