@@ -11,6 +11,7 @@ describe Promotion do
                                        discount_threshold: DISCOUNT_THRESHOLD,
                                        multibuy_price: MULTIBUY_PRICE,
                                        multibuy_item: multibuy_item)}
+  let(:promotion2) {described_class.new}
   doubles
 
   describe "#initialize" do

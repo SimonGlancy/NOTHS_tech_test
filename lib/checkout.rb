@@ -1,9 +1,8 @@
 class Checkout
 
-
 attr_reader :basket
 
-  def initialize(promotional_rules, basket=Basket)
+  def initialize(promotional_rules=Promotion.new, basket=Basket)
     @basket = basket.new(promotional_rules)
     @promotional_rules = promotional_rules
   end
@@ -20,7 +19,6 @@ private
 
 attr_reader :promotional_rules
 
-
   def basket_discount?
     basket.total > promotional_rules.discount_threshold
   end
@@ -32,6 +30,4 @@ attr_reader :promotional_rules
   def discount_total
     reduction * basket.total
   end
-
-
 end

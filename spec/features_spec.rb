@@ -9,6 +9,7 @@ describe Checkout do
 
 
   subject(:checkout) {described_class.new(promotional_rules)}
+  let(:checkout2) {desctibed_class.new}
   let(:promotional_rules) {Promotion.new( basket_discount: BASKET_DISCOUNT,
                                           discount_threshold: DISCOUNT_THRESHOLD,
                                           multibuy_price: MULTIBUY_PRICE,
@@ -46,6 +47,15 @@ describe Checkout do
       checkout.scan(item_001)
       checkout.scan(item_003)
       expect(checkout.total).to eq(73.76)
+    end
+  end
+
+  describe "test 004" do
+    it "No Promo Code passed" do
+      checkout2.scan(item_001)
+      checkout2.scan(item_002)
+      checkout2.scan(item_003)
+      expect(checkout2.total).to eq(74.2)
     end
   end
 
