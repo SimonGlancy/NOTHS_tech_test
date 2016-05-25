@@ -8,12 +8,12 @@ attr_reader :product_code, :name
     @price = price
   end
 
-  def discount(percentage)
-    @price *= (1 - percentage)
-  end
-
   def price
     @price.round(2)
+  end
+
+  def discount(new_price)
+    @price = new_price
   end
 
 end

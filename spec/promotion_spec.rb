@@ -8,12 +8,13 @@ describe Promotion do
 
   BASKET_DISCOUNT = 0.1
   DISCOUNT_THRESHOLD = 60
-  MULTIBUY_DISCOUNT = 0.081
+  MULTIBUY_PRICE = 8.50
 
 
-  let(:promotion) {described_class.new(BASKET_DISCOUNT,
-                                       DISCOUNT_THRESHOLD,
-                                       MULTIBUY_DISCOUNT, multibuy_item)}
+  let(:promotion) {described_class.new(basket_discount: BASKET_DISCOUNT,
+                                       discount_threshold: DISCOUNT_THRESHOLD,
+                                       multibuy_price: MULTIBUY_PRICE,
+                                       multibuy_item: multibuy_item)}
   let(:multibuy_item) {double(:item,
                       product_code: "001",
                       name: "Travel Card Holder",
@@ -29,8 +30,8 @@ describe Promotion do
       expect(promotion.discount_threshold).to eq(DISCOUNT_THRESHOLD)
     end
 
-    it "has a multibuy discount" do
-      expect(promotion.multibuy_discount).to eq(MULTIBUY_DISCOUNT)
+    it "has a multibuy price" do
+      expect(promotion.multibuy_price).to eq(MULTIBUY_PRICE)
     end
 
     it "has a multibuy item" do
