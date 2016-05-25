@@ -7,7 +7,6 @@ describe Checkout do
 
   doubles
 
-
   subject(:checkout) {described_class.new(promotional_rules)}
   let(:checkout2) {desctibed_class.new}
   let(:promotional_rules) {Promotion.new( basket_discount: BASKET_DISCOUNT,
@@ -58,5 +57,4 @@ describe Checkout do
       expect(checkout2.total).to eq(74.2)
     end
   end
-
 end

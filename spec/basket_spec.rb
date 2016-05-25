@@ -9,15 +9,11 @@ describe Basket do
 
   subject(:basket) {described_class.new(promotional_rules)}
 
-
   let(:promotional_rules) {double( :promotion,
                                     basket_discount: BASKET_DISCOUNT,
                                     discount_threshold: DISCOUNT_THRESHOLD,
                                     multibuy_price: MULTIBUY_PRICE,
                                     multibuy_item: item_001)}
-
-
-
 
   describe "#initialize" do
     it "has an empty array called all" do
@@ -50,9 +46,4 @@ describe Basket do
       basket.total
     end
   end
-
-
-
-
-
 end

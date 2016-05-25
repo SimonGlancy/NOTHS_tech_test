@@ -2,9 +2,7 @@ require "checkout"
 require "item"
 require "helpers"
 
-
 describe Checkout do
-
 
   subject(:checkout) {described_class.new(promotional_rules,
                                           basket_class)}

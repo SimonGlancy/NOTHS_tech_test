@@ -3,8 +3,6 @@ require "checkout"
 require "item"
 require "helpers"
 
-
-
 describe Promotion do
 
   subject(:promotion) {described_class.new(basket_discount: BASKET_DISCOUNT,
@@ -32,8 +30,4 @@ describe Promotion do
     end
 
   end
-
-
-
-
 end
