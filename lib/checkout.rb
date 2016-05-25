@@ -1,15 +1,9 @@
 class Checkout
 
 
-NULL_DISCOUNT = { basket_discount: nil,
-                  discount_threshold: nil,
-                  multibuy_discount: nil,
-                  multibuy_item: nil }
-
-
 attr_reader :basket
 
-  def initialize(promotional_rules=NULL_DISCOUNT, basket=Basket)
+  def initialize(promotional_rules, basket=Basket)
     @basket = basket.new(promotional_rules)
     @promotional_rules = promotional_rules
   end
