@@ -72,7 +72,7 @@ Promotion - The intention was to have an object where the different rules could 
 
 The solution is fully tested using RSpec and a feature test of the 3 pieces of test data is included. I have used dependency injection to adhere to single responsibility principle and have therefore been able to double all external classes in my tests.
 
-###### Conclusions
+##### Conclusion
 
 I am happy with this solution as I have not used researched and tried to replicate a known checkout/promotions design pattern.
 
