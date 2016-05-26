@@ -1,10 +1,7 @@
 require "item"
+require "helpers"
 
 describe Item do
-  PRODUCT_CODE_ONE = "001"
-  ITEM_NAME_ONE = "Travel Card Holder"
-  ITEM_PRICE_ONE = 9.25
-  MULTIBUY_DISCOUNT = 8.50
 
   let(:item) {described_class.new(PRODUCT_CODE_ONE,ITEM_NAME_ONE,ITEM_PRICE_ONE)}
 
@@ -25,8 +22,8 @@ describe Item do
 
   describe "#discount" do
     it "reduces the price of the item" do
-      item.discount(MULTIBUY_DISCOUNT)
-      expect(item.price).to eq(MULTIBUY_DISCOUNT)
+      item.discount(MULTIBUY_PRICE)
+      expect(item.price).to eq(MULTIBUY_PRICE)
     end
   end
 

@@ -6,6 +6,9 @@ MULTIBUY_PRICE = 8.5
 LOWER_BASKET_TOTAL = 55
 BASKET_TOTAL = 65
 TEN_PERC_BASKET = BASKET_TOTAL*0.9
+PRODUCT_CODE_ONE = "001"
+ITEM_NAME_ONE = "Travel Card Holder"
+ITEM_PRICE_ONE = 9.25
 
 def doubles
   let(:promotional_rules) {double(:promotion,
