@@ -1,3 +1,5 @@
+| [Solution](https://github.com/SimonGlancy/NOTHS_tech_test#solution) | [Conclusion](https://github.com/SimonGlancy/NOTHS_tech_test#conclusion) |
+
 # Not On the High Street - Tech Test
 
 #### Author: Simon Glancy
